@@ -1,2 +1,2 @@
-# wu_mem_tks
-for Prof. Wu
+# wu_mem
+in memory of Prof. Wu

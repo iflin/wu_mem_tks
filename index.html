@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!--僅以此表達我的哀傷、感謝與愧疚-->
+
+<html>
+
+<head>
+    <title>悼念吳聲海教授</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!--    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+
+    <!-- 給google看 -->
+    <meta name="author" content="If if.lin87048@gmail.com">
+    <meta name="copyright" content="If if.lin87048@gmail.com">
+    <meta name="description" content="在大家的悼念貼文中，看到更多關於吳老師的故事與足跡">
+    <meta itemprop="name" content="吳聲海教授｜大家對他的懷念與感謝">
+    <meta itemprop="image" content="https://iflin.github.io/wu_mem_tks/cover2.jpeg">
+    <meta itemprop="description" content="在大家的悼念貼文中，看到更多關於吳老師的故事與足跡">
+
+    <!--給FB看-->
+    <meta property="og:title" content="吳聲海教授｜大家對他的懷念與感謝">
+    <meta property="og:url" content="https://iflin.github.io/wu_mem_tks/index.html">
+    <meta property="og:image" content="https://iflin.github.io/wu_mem_tks/cover2.jpeg">
+    <meta property="og:description" content="在大家的悼念貼文中，看到更多關於吳老師的故事與足跡">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@If_Lin">
+    <meta name="twitter:title" content="吳聲海教授｜大家對他的懷念與感謝">
+    <meta name="twitter:description" content="在大家的悼念貼文中，看到更多關於吳老師的故事與足跡">
+    <meta name="twitter:creator" content="@If_Lin">
+    <meta name="twitter:url" content="https://iflin.github.io/wu_mem_tks/index.html">
+
+
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+
+
+            </div>
+        </header>
+
+
+        <!-- Main -->
+
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <h1>眾人對吳聲海教授的懷念與感謝</h1>
+                    <!--                    <p style="font-size: 1.2em; margin-top: -2.5em;margin-bottom: 1em;">吳聲海教授於2019年11月14日辭世</p>-->
+                </header>
+
+                <div id='loading'>（載入資料中...需較長時間，請稍候）</div>
+
+                <section class="tiles">
+
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v5.0&appId=1772515189745425&autoLogAppEvents=1"></script>
+
+                </section>
+
+<!--
+                <section>
+                    <article>
+                        <div class="fb-comment-embed" data-href="https://www.facebook.com/phame.boa/posts/3105957529421591?comment_id=3105966926087318&amp;reply_comment_id=3106120449405299" data-width="560" data-include-parent="true"></div>
+                    </article>
+
+                </section>
+-->
+
+            </div>
+        </div>
+
+
+        <script>
+            //                        $(function() {
+            //                            $.get('https://spreadsheets.google.com/feeds/list/1argj_955zADENxsVLeUsMQbzmb1e1EzN_3UoM62eiXw/1/public/values?alt=json', function(data) {
+            //                                console.log(data);
+            //            
+            //                                var gdata = data.feed.entry;
+            //            
+            //                                d3.json(gdata, function(data) {
+            //                                    console.log(gdata);
+            //            
+            //                                    d3.select('.tiles')
+            //                                        .selectAll()
+            //                                        .data(gdata)
+            //                                        .enter()
+            //                                        .append('article')
+            //                                        .append('div')
+            //                                        .attr('class', 'fb-post')
+            //                                        .attr('data-width', '100%')
+            //                                        .attr('href', d => d.gsx$link.$t);
+            //                                });
+            //                            });
+            //                        });
+            //
+            //
+
+
+
+            d3.json("link.json", function(data) {
+                console.log(data);
+
+                d3.select('.tiles')
+                    .selectAll()
+                    .data(data
+                        .filter(function(d) { //篩選
+                        return d.type__1 == "感謝" ;
+                    })  
+                          
+                        .sort(function(a, b) { //排序
+                            return a.type_no - b.type_no;
+                        })
+                    )
+                    .enter()
+                    .append('article')
+                    .append('div')
+                    .attr('class', 'fb-post')
+//                    .attr('data-width', '100%')
+                    .attr('href', d => d.link);
+            });
+        </script>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
