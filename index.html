@@ -49,7 +49,7 @@
     <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header -->
+        <!-- Header test -->
         <header id="header">
             <div class="inner">
 
@@ -77,7 +77,7 @@
 
                 </section>
 
-<!--
+                <!--
                 <section>
                     <article>
                         <div class="fb-comment-embed" data-href="https://www.facebook.com/phame.boa/posts/3105957529421591?comment_id=3105966926087318&amp;reply_comment_id=3106120449405299" data-width="560" data-include-parent="true"></div>
@@ -116,7 +116,7 @@
             //
 
             var url = 'https://iflin.github.io/wu_mem/link.json'
-             
+
             d3.json(url, function(data) {
                 console.log(data);
 
@@ -124,9 +124,9 @@
                     .selectAll()
                     .data(data
                         .filter(function(d) { //篩選
-                        return d.type__1 == "感謝" ;
-                    })  
-                          
+                            return d.type__1 == "感謝";
+                        })
+
                         .sort(function(a, b) { //排序
                             return a.type_no - b.type_no;
                         })
@@ -135,7 +135,7 @@
                     .append('article')
                     .append('div')
                     .attr('class', 'fb-post')
-//                    .attr('data-width', '100%')
+                    //                    .attr('data-width', '100%')
                     .attr('href', d => d.link);
             });
         </script>
@@ -146,14 +146,14 @@
             <div class="inner">
         </footer>
 
-    </div>
+        </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
 </body>
 
